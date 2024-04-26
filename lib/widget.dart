@@ -442,6 +442,7 @@ order(BuildContext context) {
             const SizedBox(
               width: 270,
               child: TextField(
+                maxLength: 9,
                 decoration: InputDecoration(
                     prefixText: '+998 ',
                     prefixStyle: TextStyle(color: Colors.black, fontSize: 18),
