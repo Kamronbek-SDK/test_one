@@ -331,150 +331,314 @@ class _HomeBodyState extends State<HomeBody> {
   }
 }
 
-order(BuildContext context) {
+// order(BuildContext context) {
+//   int a = Random().nextInt(4);
+//   showDialog(
+//     context: context,
+//     builder: (context) =>
+//         AlertDialog(
+//           title: Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             children: [
+//               const Text("Sizning buyurtmangiz"),
+//               const SizedBox(width: 12,),
+//               IconButton(
+//                   onPressed: () {
+//                     Navigator.of(context).pop();
+//                   },
+//                   icon: const Icon(Icons.highlight_remove, size: 30,)
+//               )
+//             ],
+//           ),
+//           content: SizedBox(
+//             height: 315,
+//             child: Column(
+//               children: [
+//             Expanded(
+//             child: Row(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//               children: [
+//                 const Column(
+//                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                   children: [
+//                     Icon(CupertinoIcons.location_solid),
+//                     SizedBox(height: 65,),
+//                     Icon(Icons.navigation),
+//                   ],
+//                 ),
+//                 const SizedBox(width: 8,),
+//                 Expanded(
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       const Text('Olib ketish nuqtasi',
+//                         style: TextStyle(fontSize: 13, color: Colors.grey),),
+//                       Text(city1, overflow: TextOverflow.fade,
+//                         style: const TextStyle(
+//                             fontSize: 16, fontWeight: FontWeight.bold),),
+//                       const SizedBox(height: 25,),
+//                       const Text('Yetqazish nuqtasi',
+//                         style: TextStyle(fontSize: 13, color: Colors.grey),),
+//                       Text(city2, overflow: TextOverflow.fade,
+//                         style: const TextStyle(
+//                             fontSize: 16, fontWeight: FontWeight.bold),),
+//                     ],
+//                   ),
+//                 ),
+//                 const Padding(
+//                   padding: EdgeInsets.only(bottom: 15),
+//                   child: VerticalDivider(width: 25, color: Colors.black,),
+//                 ),
+//                 const SizedBox(width: 5,),
+//                 Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     Column(
+//                       children: [
+//                         Wrap(
+//                           children: [
+//                             const Icon(Icons.groups),
+//                             const SizedBox(width: 8,),
+//                             Column(
+//                               crossAxisAlignment: CrossAxisAlignment.start,
+//                               children: [
+//                                 const Text('Odam soni', style: TextStyle(
+//                                     fontSize: 13, color: Colors.grey),),
+//                                 Text(controller4.text, style: const TextStyle(
+//                                     fontSize: 16,
+//                                     fontWeight: FontWeight.bold),),
+//                               ],
+//                             ),
+//                           ],
+//                         ),
+//                         const SizedBox(height: 35,),
+//                         Wrap(
+//                           children: [
+//                             const Icon(CupertinoIcons.car_detailed),
+//                             const SizedBox(width: 8,),
+//                             Column(
+//                               crossAxisAlignment: CrossAxisAlignment.start,
+//                               children: [
+//                                 const Text('Mashina turi',
+//                                   overflow: TextOverflow.fade,
+//                                   style: TextStyle(
+//                                       fontSize: 13, color: Colors.grey),),
+//                                 Text(carsT[a], style: const TextStyle(
+//                                     fontSize: 16,
+//                                     fontWeight: FontWeight.bold),),
+//                               ],
+//                             )
+//                           ],
+//                         ),
+//                       ],
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//           Expanded(
+//             child: Column(
+//               children: [
+//             const SizedBox(
+//               width: 270,
+//               child: TextField(
+//                 maxLength: 9,
+//                 style: TextStyle(color: Colors.black, fontSize: 18),
+//                 decoration: InputDecoration(
+//                     prefixText: '+998 ',
+//                     prefixStyle: TextStyle(color: Colors.black, fontSize: 18),
+//                     prefixIcon: Icon(Icons.call),
+//                     hintText: 'Telefon raqam',
+//                     hintStyle: TextStyle(color: Colors.black)
+//                 ),
+//               ),
+//             ),
+//             const SizedBox(height: 25,),
+//             SizedBox(
+//                 height: 55,
+//                 width: 300,
+//                 child: ElevatedButton(onPressed: ()
+//             {},
+//             style: ElevatedButton.styleFrom(
+//                 backgroundColor: CupertinoColors.systemYellow
+//                     .darkHighContrastColor,
+//                 foregroundColor: Colors.black87
+//             ),
+//             child: const Text(
+//               'Kodni yuborish',
+//               style: TextStyle(
+//                 fontSize: 20,
+//                 fontWeight: FontWeight.bold,
+//               ),
+//             ),),
+//         )
+//     ],
+//   ))
+//   ],
+//   ),
+//   ),
+//   ));
+//   }
+
+void order(BuildContext context) {
   int a = Random().nextInt(4);
   showDialog(
     context: context,
-    builder: (context) =>
-        AlertDialog(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    builder: (context) => AlertDialog(
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text("Sizning buyurtmangiz"),
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(Icons.highlight_remove, size: 30),
+          )
+        ],
+      ),
+      content: SingleChildScrollView(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * 0.9,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Sizning buyurtmangiz"),
-              const SizedBox(width: 35,),
-              IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  icon: const Icon(Icons.highlight_remove, size: 30,))
-            ],
-          ),
-          content: SizedBox(
-            height: 300,
-            child: Column(
-              children: [
-            Expanded(
-            child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const Column(
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Icon(CupertinoIcons.location_solid),
-                    SizedBox(height: 65,),
-                    Icon(Icons.navigation),
-                  ],
-                ),
-                const SizedBox(width: 8,),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Column(
                     children: [
-                      const Text('Olib ketish nuqtasi',
-                        style: TextStyle(fontSize: 13, color: Colors.grey),),
-                      Text(city1, overflow: TextOverflow.fade,
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),),
-                      const SizedBox(height: 25,),
-                      const Text('Yetqazish nuqtasi',
-                        style: TextStyle(fontSize: 13, color: Colors.grey),),
-                      Text(city2, overflow: TextOverflow.fade,
-                        style: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),),
+                      Icon(CupertinoIcons.location_solid),
+                      SizedBox(height: 65),
+                      Icon(Icons.navigation),
                     ],
                   ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 15),
-                  child: VerticalDivider(width: 25, color: Colors.black,),
-                ),
-                const SizedBox(width: 5,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Wrap(
-                          children: [
-                            const Icon(Icons.groups),
-                            const SizedBox(width: 8,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('Odam soni', style: TextStyle(
-                                    fontSize: 13, color: Colors.grey),),
-                                Text(controller4.text, style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),),
-                              ],
-                            ),
-                          ],
+                        const Text(
+                          'Olib ketish nuqtasi',
+                          style: TextStyle(fontSize: 13, color: Colors.grey),
                         ),
-                        const SizedBox(height: 35,),
-                        Wrap(
-                          children: [
-                            const Icon(CupertinoIcons.car_detailed),
-                            const SizedBox(width: 8,),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text('Mashina turi',
-                                  overflow: TextOverflow.fade,
-                                  style: TextStyle(
-                                      fontSize: 13, color: Colors.grey),),
-                                Text(carsT[a], style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),),
-                              ],
-                            )
-                          ],
+                        Text(
+                          city1,
+                          overflow: TextOverflow.fade,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 25),
+                        const Text(
+                          'Yetqazish nuqtasi',
+                          style: TextStyle(fontSize: 13, color: Colors.grey),
+                        ),
+                        Text(
+                          city2,
+                          overflow: TextOverflow.fade,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Column(
-              children: [
-            const SizedBox(
-              width: 270,
-              child: TextField(
-                maxLength: 9,
-                decoration: InputDecoration(
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 15),
+                    child: VerticalDivider(width: 25, color: Colors.black),
+                  ),
+                  const SizedBox(width: 5),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Wrap(
+                        children: [
+                          const Icon(Icons.groups),
+                          const SizedBox(width: 8),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Odam soni',
+                                  style: TextStyle(
+                                      fontSize: 13, color: Colors.grey)),
+                              Text(controller4.text,
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 35),
+                      Wrap(
+                        children: [
+                          const Icon(CupertinoIcons.car_detailed),
+                          const SizedBox(width: 8),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text('Mashina turi',
+                                  overflow: TextOverflow.fade,
+                                  style: TextStyle(
+                                      fontSize: 13, color: Colors.grey)),
+                              Text(
+                                carsT[a],
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 25),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: const TextField(
+                  maxLength: 9,
+                  style: TextStyle(color: Colors.black, fontSize: 18),
+                  decoration: InputDecoration(
                     prefixText: '+998 ',
                     prefixStyle: TextStyle(color: Colors.black, fontSize: 18),
                     prefixIcon: Icon(Icons.call),
                     hintText: 'Telefon raqam',
-                    hintStyle: TextStyle(color: Colors.black)
+                    hintStyle: TextStyle(color: Colors.black),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 25,),
-            SizedBox(
+              const SizedBox(height: 25),
+              SizedBox(
                 height: 55,
-                width: 300,
-                child: ElevatedButton(onPressed: ()
-            {},
-            style: ElevatedButton.styleFrom(
-                backgroundColor: CupertinoColors.systemYellow
-                    .darkHighContrastColor,
-                foregroundColor: Colors.black87
-            ),
-            child: const Text(
-              'Kodni yuborish',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+                width: MediaQuery.of(context).size.width * 0.9,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                    CupertinoColors.systemYellow.darkHighContrastColor,
+                    foregroundColor: Colors.black87,
+                  ),
+                  child: const Text(
+                    'Kodni yuborish',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-            ),),
-        )
-    ],
-  ))
-  ],
-  ),
-  ),
-  ));
-  }
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+}

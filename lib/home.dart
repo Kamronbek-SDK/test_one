@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             for (int i = 0; i < texts.length; i++)
               ListTile(
+                onTap: (){},
                 leading: Icon(icons[i]),
                 title: Text(texts[i]),
               ),
@@ -68,7 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.grey,
                     blurRadius: 20,
                     offset: Offset(1, 2),
-                    blurStyle: BlurStyle.solid)
+                    blurStyle: BlurStyle.solid
+                )
               ]),
               child: const Center(
                   child: Text(
@@ -85,9 +87,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       appBar: AppBar(
+        centerTitle: true,
         title: const Text(
           'Qaerga ?',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
         ),
       ),
       body: const HomeBody() ,
