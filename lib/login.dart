@@ -19,7 +19,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
+      body: Stack(
+          children: [
         Image.asset(
           'img/taxi.jpg',
           fit: BoxFit.cover,
@@ -124,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                                     : null,
                                 color: Colors.white,
                               )),
-                          prefixText: '+998 ',
+                          prefix: const Text('+998 '),
                           prefixStyle:
                               const TextStyle(color: Colors.white, fontSize: 18),
                           border: InputBorder.none,

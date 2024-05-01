@@ -480,7 +480,6 @@ class _HomeBodyState extends State<HomeBody> {
 //   ),
 //   ));
 //   }
-
 void order(BuildContext context) {
   int a = Random().nextInt(4);
   showDialog(
@@ -489,13 +488,13 @@ void order(BuildContext context) {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text("Sizning buyurtmangiz"),
+          const Text("Sizning buyurtmangiz", style: TextStyle(fontSize: 20),),
           IconButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
             icon: const Icon(Icons.highlight_remove, size: 30),
-          )
+          ),
         ],
       ),
       content: SingleChildScrollView(
@@ -521,26 +520,26 @@ void order(BuildContext context) {
                       children: [
                         const Text(
                           'Olib ketish nuqtasi',
-                          style: TextStyle(fontSize: 13, color: Colors.grey),
+                          style: TextStyle(fontSize: 11, color: Colors.grey),
                         ),
                         Text(
                           city1,
                           overflow: TextOverflow.fade,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 25),
                         const Text(
                           'Yetqazish nuqtasi',
-                          style: TextStyle(fontSize: 13, color: Colors.grey),
+                          style: TextStyle(fontSize: 11, color: Colors.grey),
                         ),
                         Text(
                           city2,
                           overflow: TextOverflow.fade,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -564,10 +563,10 @@ void order(BuildContext context) {
                             children: [
                               const Text('Odam soni',
                                   style: TextStyle(
-                                      fontSize: 13, color: Colors.grey)),
+                                      fontSize: 11, color: Colors.grey)),
                               Text(controller4.text,
                                   style: const TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.bold)),
                             ],
                           ),
@@ -584,11 +583,11 @@ void order(BuildContext context) {
                               const Text('Mashina turi',
                                   overflow: TextOverflow.fade,
                                   style: TextStyle(
-                                      fontSize: 13, color: Colors.grey)),
+                                      fontSize: 11, color: Colors.grey)),
                               Text(
                                 carsT[a],
                                 style: const TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -603,15 +602,16 @@ void order(BuildContext context) {
               const SizedBox(height: 25),
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.9,
-                child: const TextField(
+                child: TextField(
+                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                  keyboardType: TextInputType.phone,
                   maxLength: 9,
-                  style: TextStyle(color: Colors.black, fontSize: 18),
-                  decoration: InputDecoration(
-                    prefixText: '+998 ',
+                  style: const TextStyle(color: Colors.black, fontSize: 18),
+                  decoration: const InputDecoration(
+                    prefix: Text('+998 '),
                     prefixStyle: TextStyle(color: Colors.black, fontSize: 18),
                     prefixIcon: Icon(Icons.call),
                     hintText: 'Telefon raqam',
-                    hintStyle: TextStyle(color: Colors.black),
                   ),
                 ),
               ),
